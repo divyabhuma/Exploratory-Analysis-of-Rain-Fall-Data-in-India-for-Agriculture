@@ -1,1 +1,141 @@
+Rainfall Prediction Web App 🌧️
+Project Overview
 
+This project is a Rainfall Prediction Web Application built using Flask, Python, and Machine Learning.
+The app predicts whether it will rain or not based on weather parameters like temperature, humidity, pressure, and wind speed.
+
+Model: Trained ML model (Rainfall.pkl) for predicting rain.
+
+Scaler: Input features are scaled using scale.pkl.
+
+Frontend: Simple HTML form (index.html) for user input.
+
+Backend: Flask handles routing and prediction logic.
+
+Features
+
+User-friendly Web Interface
+
+Input fields for MinTemp, MaxTemp, Humidity, Pressure, WindSpeed
+
+Predict button to get results.
+
+Accurate Rain Prediction
+
+Uses a pre-trained ML model.
+
+Returns chance of rain or no rain.
+
+Error Handling
+
+Displays error messages if the input is invalid.
+
+Dynamic Prediction
+
+Uses a data frame structure similar to training data to ensure prediction consistency.
+
+Updated Features in Version 2
+
+predict() function updated to handle only necessary fields:
+
+Automatically calculates derived features like:
+
+Average temperature (MinTemp+MaxTemp)/2
+
+Duplicates of Humidity and Pressure for model compatibility
+
+Sets default values for Rainfall and RainToday (0) for input.
+
+Frontend input types updated to number for better validation.
+
+Project Structure
+RainfallPrediction/
+│
+├── app.py                 # Flask app with updated predict() function
+├── Rainfall.pkl           # Pre-trained machine learning model
+├── scale.pkl              # Scaler for feature normalization
+├── templates/
+│   ├── index.html         # Home page with input form
+│   ├── chance.html        # Page displayed if rain is predicted
+│   └── nochance.html      # Page displayed if no rain
+└── static/
+    └── style.css          # CSS for styling the web pages
+
+Installation
+
+Clone the repository:
+
+git clone <your-repo-link>
+cd RainfallPrediction
+
+
+Create and activate a virtual environment:
+
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Requirements: Flask, pandas, numpy, scikit-learn, pickle-mixin
+
+Usage
+
+Run the Flask app:
+
+python app.py
+
+
+Open your browser and go to:
+
+http://127.0.0.1:5000/
+
+
+Enter weather parameters:
+
+Min Temperature (°C)
+
+Max Temperature (°C)
+
+Humidity (%)
+
+Pressure (hPa)
+
+Wind Speed (km/h)
+
+Click Predict.
+
+If rain is predicted: Redirects to chance.html.
+
+If no rain: Redirects to nochance.html.
+
+Example Inputs for Rain Prediction
+MinTemp	MaxTemp	Humidity	Pressure	WindSpeed
+18	      24	   85	      1005	     15
+20	      25	   90	      1002	     10
+16	      22	   95	      1000      	20
+Screenshots
+Home Page:
+
+
+Chance of Rain:
+
+
+No Rain:
+
+
+Future Improvements
+
+Add date and location input for more accurate predictions.
+
+Use interactive charts to display weekly weather forecast.
+
+Deploy on Heroku or AWS for public access.
+
+Integrate real-time weather API for live data input.
