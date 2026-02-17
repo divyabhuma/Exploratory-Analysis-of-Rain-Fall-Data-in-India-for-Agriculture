@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="box">
+    <h1>Rainfall Prediction</h1>
+
+    <form action="/predict" method="post">
+        <input type="number" name="MinTemp" placeholder="Min Temperature (°C)" step="any" required>
+        <input type="number" name="MaxTemp" placeholder="Max Temperature (°C)" step="any" required>
+        <input type="number" name="Humidity" placeholder="Humidity (%)" step="any" required>
+        <input type="number" name="Pressure" placeholder="Pressure (hPa)" step="any" required>
+        <input type="number" name="WindSpeed" placeholder="Wind Speed (km/h)" step="any" required>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+</div>
+</body>
+</html>
